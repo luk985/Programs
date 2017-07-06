@@ -1,10 +1,8 @@
 package WindowCheck;
 
-import java.util.concurrent.TimeUnit;
-
 public class Check {
 	
-	public void CheckPerson() {
+	public String CheckPerson() {
 		
 		String username = System.getProperty("user.name");
 		System.out.println("Person login: " + username);
@@ -25,16 +23,10 @@ public class Check {
 		for (int i=0; i<n; i++) {
 			if(username.equals(TablePerson[i])) {
 				System.out.println("The person has the authority");
-				try {
-					TimeUnit.SECONDS.sleep(3);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				SampleController.PersonTestSuccess();
-
+				return TablePerson[i];
 			}
 		}
+		return "false";
 		
 		
 	}

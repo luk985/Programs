@@ -7,14 +7,16 @@ import javafx.scene.control.Label;
 
 public class SampleController {
 	
-	@FXML
-	protected Label personStatus;
+	String checkStatus;
 	
 	@FXML
-	protected Button buttonOne;
+	public Label personStatus;
+	
+	@FXML
+	public Button buttonOne;
 	
 	 @FXML
-	protected void PersonTestFail() {
+	public void PersonTestFail() {
 		personStatus.setText("Dostęp zabroniony - brak uprawnień");
 		}
 	 
@@ -30,7 +32,17 @@ public class SampleController {
 	 
 	 @FXML
 	 public void clickbutton(ActionEvent event) {
-		 personStatus.setText("test");
+			Check Check = new Check();
+			checkStatus = Check.CheckPerson();
+			if (checkStatus.equals("false")) {
+				personStatus.setText("Dokonano weryfikacji loginu użytkownika: \nUżytkownik nie posiada uprawnień");
+				buttonOne.setDisable(true);
+			}				
+			else {
+				personStatus.setText("Dokonano weryfikacji loginu użytkownika: \n" + checkStatus + "\nDostęp przyznany");
+			}
+			
+		 //personStatus.setText("test");
 	 }
 	
 }
