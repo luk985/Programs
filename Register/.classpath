@@ -23,5 +23,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/luk/Desktop/Java/Biblioteki/Bazadanych/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luk/Desktop/Java/Biblioteki/poi-bin-3.17-beta1-20170701/poi-3.17-beta1/poi-3.17-beta1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/luk/Desktop/Java/Biblioteki/poi-bin-3.17-beta1-20170701/poi-3.17-beta1/poi-ooxml-3.17-beta1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

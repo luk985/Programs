@@ -2,9 +2,12 @@ package WindowCheck;
 
 public class Check {
 	
+	public String username = System.getProperty("user.name");
+	public String verification = "negative";
+	
 	public String CheckPerson() {
 		
-		String username = System.getProperty("user.name");
+
 		System.out.println("Person login: " + username);
 		
 		int n = 10;
@@ -18,18 +21,14 @@ public class Check {
 		TablePerson[6] = "Kazimierz Piwko";
 		TablePerson[7] = "luk";
 		
-		SampleController SampleController = new SampleController();
+
 		
 		for (int i=0; i<n; i++) {
 			if(username.equals(TablePerson[i])) {
 				System.out.println("The person has the authority");
-				return TablePerson[i];
+				verification = "positive";
 			}
 		}
-		return "false";
-		
-		
+	return verification;
 	}
-			
-
 }
