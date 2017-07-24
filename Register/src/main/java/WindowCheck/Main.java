@@ -28,6 +28,8 @@ public class Main extends Application{
 			if (check.CheckPerson().equals("positive")) {
 				System.out.println("Verification is positive");
 				LabelPersonStatus.setText("Dokonano weryfikacji loginu użytkownika:\n" + check.username + "\nDostęp przyznany");
+				WindowMain windowmain = new WindowMain();
+				windowmain.start2(primaryStage);
 			} else {
 				System.out.println("Verification is negative");
 				LabelPersonStatus.setText("Dokonano weryfikacji loginu użytkownika:\n" + check.username + "\nUżytkownik nie posiada uprawnień");
@@ -36,20 +38,6 @@ public class Main extends Application{
 			e.printStackTrace();
 		}
 		
-		try {
-			Pane root2 = (Pane)FXMLLoader.load(getClass().getResource("/WindowMain/WindowMain.fxml"));
-			Scene scene = new Scene(root2, 1300, 805);
-			primaryStage.setScene(scene);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		ReadExcelRegister excel = new ReadExcelRegister();
-		try {
-			excel.ReadExcel();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}
 	public static void main(String[] args) {
